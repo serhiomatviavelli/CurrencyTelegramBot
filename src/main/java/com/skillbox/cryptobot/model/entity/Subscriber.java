@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -20,5 +21,7 @@ public class Subscriber {
     private UUID userId;
     private String telegramId;
     private Double price;
+    private LocalDateTime notificationTime;
+    private Long chatId;
 
 }

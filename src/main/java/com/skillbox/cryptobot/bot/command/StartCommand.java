@@ -34,8 +34,10 @@ public class StartCommand implements IBotCommand {
     @Override
     public void processMessage(AbsSender absSender, Message message, String[] arguments) {
         SendMessage answer = new SendMessage();
-        answer.setChatId(message.getChatId());
+        String telegramId = message.getFrom().getUserName();
+        Long chatId = message.getChatId();
 
+        answer.setChatId(message.getChatId());
         answer.setText("""
                 Привет! Данный бот помогает отслеживать стоимость биткоина.
                 Поддерживаемые команды:
@@ -49,6 +51,6 @@ public class StartCommand implements IBotCommand {
         } catch (TelegramApiException e) {
             log.error("Error occurred in /start command", e);
         }
-        subscriberService.addNewSubscriber(message.getFrom().getUserName());
+        subscriberService.addNewSubscriber(telegramId, chatId);
     }
 }

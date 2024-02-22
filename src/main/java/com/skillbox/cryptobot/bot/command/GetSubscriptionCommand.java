@@ -13,6 +13,9 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.Optional;
 
+/**
+ * Обработка команды на получение текущей подписки.
+ */
 @Service
 @Slf4j
 @AllArgsConstructor

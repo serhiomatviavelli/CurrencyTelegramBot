@@ -12,9 +12,10 @@ telegram:
   bot:
     token: "6400518028:AAGD0fOmoxIrO7Y0IjunIhS5BsHvz8AlHJ4"
     username: "CurrencyTelegramExampleBot"
+    notify:
+      delay:
+        value: 10
 
 binance:
   api:
     getPrice: "https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT"
-    updateFriquency: 2
-    sendMessageFriquency: 10
